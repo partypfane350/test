@@ -12,8 +12,7 @@ class FOX:
             self.greet: ['hallo', 'hi', 'hey'],
             self.farewell: ['bye', 'tschüss', 'auf wiedersehen'],
             self.time: ['time', 'zeit', 'uhr'],
-            self.datum: ['datum', 'date'],
-            self.rechner: []  # Leider manuell 
+            self.datum: ['datum', 'date']
         }
         if os.path.exists(data_path):
             with open(data_path, "r") as f:
