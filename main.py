@@ -1,12 +1,14 @@
 import datetime
 from time import sleep
 import json
-import os        
+import os   
+
 class FOX:
     def __init__(self, data_path="daten.json"):
         self.daten = {}
         self.commands = {
             self.speichern: ['speicher', 'save'],
+            self.add: ['add'],
             self.delete: ['delete', 'del', 'löschen'],
             self.show_data:  ['data', 'daten'],
             self.greet: ['hallo', 'hi', 'hey'],
@@ -52,6 +54,11 @@ class FOX:
             json.dump(self.daten, f, indent=4)
             
         return f"Gespeichert: {key} -> {value}, Anzahl: {anzahl}"
+    
+    def add(self):
+        pass
+        
+        
                   
     def delete(self, data_path="daten.json"):
         key = self.txt.split(" ", 1)[1]
