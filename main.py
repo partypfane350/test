@@ -1,7 +1,8 @@
 import datetime
 from time import sleep
 import json
-import os   
+import os
+from spiele import Ratespiel, schere_stein_papier
 
 class FOX:
     def __init__(self, data_path="daten.json"):
@@ -14,8 +15,10 @@ class FOX:
             self.greet: ['hallo', 'hi', 'hey'],
             self.farewell: ['bye', 'tschüss', 'auf wiedersehen'],
             self.time: ['time', 'zeit', 'uhr'],
-            self.datum: ['datum', 'date']
+            self.datum: ['datum', 'date'],
+            self.spiele: ['lass spielen', 'spielen']
         }
+        
         if os.path.exists(data_path):
             with open(data_path, "r") as f:
                 self.daten = json.load(f)
@@ -58,7 +61,7 @@ class FOX:
     def add(self):
         pass
         
-        
+ # fertig stellen       
                   
     def delete(self, data_path="daten.json"):
         key = self.txt.split(" ", 1)[1]
@@ -100,6 +103,15 @@ class FOX:
             return f"Das Ergebnis ist {result}"
         except Exception as ex:
             return f"Ihre rechnung hat ein fehlern: '{user}' -> {ex}" 
+        
+    def spiele(self):
+        auswahl = input("was möchtest du spielen, ssp oder guess: ")
+        if auswahl == 'ssp':
+            return schere_stein_papier()
+        elif auswahl == 'guess':
+            return Ratespiel()
+        #anpassen
+        
 
 def main():
     fox = FOX()
@@ -112,6 +124,7 @@ def main():
             break 
         
         print(f'FOX: {fox.handle(user)}')  
+        
         
 if __name__ == "__main__":
     main()
