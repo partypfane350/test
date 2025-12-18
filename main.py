@@ -56,12 +56,7 @@ class FOX:
         with open(data_path, "w") as f:
             json.dump(self.daten, f, indent=4)
             
-        return f"Gespeichert: {key} -> {value}, Anzahl: {anzahl}"
-    
-    def add(self):
-        pass
-        
- # fertig stellen       
+        return f"Gespeichert: {key} -> {value}, Anzahl: {anzahl}"   
                   
     def delete(self, data_path="daten.json"):
         key = self.txt.split(" ", 1)[1]
