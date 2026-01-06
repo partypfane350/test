@@ -9,7 +9,7 @@ class FOX:
         self.daten = {}
         self.commands = {
             self.speichern: ['speicher', 'save'],
-            self.add: ['add'],
+            #self.add: ['add'],
             self.delete: ['delete', 'del', 'löschen'],
             self.show_data:  ['data', 'daten'],
             self.greet: ['hallo', 'hi', 'hey'],
@@ -106,6 +106,9 @@ class FOX:
         elif auswahl == 'guess':
             return Ratespiel()
         #anpassen
+    
+    def vorstellung(self):
+        return "Ich bin FOX, dein persönlicher Assistent. Wie kann ich dir helfen?"
         
 
 def main():
